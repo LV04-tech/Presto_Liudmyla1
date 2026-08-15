@@ -2,25 +2,25 @@
    font-family: "Roboto Condensed", sans-serif;
 }
 :root{
-    --dp:#A27A86;
-    --gr:#77686D;
-    --pi:#CB7790;
-    --vi:#4D363D;
-    --dvi:#331C23;
+    --yl: rgb(204, 213, 174);
+    --gr: rgb(109, 104, 117);
+    --gee:rgb(171, 255, 78);
+    --ly:   rgb(255, 250, 224);
+    --dvi: rgb(214, 206, 147);
     --bd:#33131D;
 }
 
-.bg-dp{
-    background-color: var(--dp); 
+.bg-yl{
+    background-color: var(--yl); 
 }
 .bg-gr{
     background-color: var(--gr);
 }
-.bg-pi{
-    background-color: var(--pi);
+.bg-gee{
+    background-color: var(--gee);
 }
-.bg-vi{
-    background-color: var(--vi);
+.bg-ly{
+    background-color: var(--ly);
 }
 .bg-dvi{
     background-color: var(--dvi);
@@ -28,17 +28,17 @@
 .bg-bd{
     background-color: var(--bd);
 }
-text-dp{
-    color: var(--dp);
+text-yl{
+    color: var(--yl);
 }
 text-gr{
     color: var(--gr);
 }
-text-pi{
-    color: var(--pi);
+text-gee{
+    color: var(--gee);
 }
-text-vi{
-    color: var(--vi);
+text-ly{
+    color: var(--ly);
 }
 text-dvi{
     color: var(--dvi);
@@ -49,30 +49,27 @@ text-bd{
 
 
 body{
-    background-image: url(/public/image/img2.jpg);
+    background-image: linear-gradient(rgb(152, 156, 153), rgba(19, 21, 21,0.2)), url(/public/image/img2.jpg);
+    background-position: center;
 }
 *{
-    font-family: "Geist", sans-serif;
+    font-family: "Oswald", sans-serif;
+    
 }
 
 /* scrittura registrati  */
 
 .height-regist{
-   font-family: "Anton SC", sans-serif;  
-  color: white;
+ font-family: "Anton SC", sans-serif;  
+  color: var(--yl);
   font-size: 50px; 
 }
 
-.height-regist::before{
-content: 'registrati';
-    position: absolute;
-    mix-blend-mode: difference;
-    filter: blur(2px);
-}
+
 
 .height-custom{
  min-height: 60vh; 
-  color: var(--gr);
+  color:rgb(240, 246, 238);
   align-items: center;
   padding: 1rem 5%;
   background: rgba(19, 21, 21,0.2);
@@ -86,8 +83,8 @@ content: 'registrati';
 /* navbar  scrittura. amachina*/
  a.navbar-brand{
 
-  font-family: "Fragment Mono", monospace;
-  color: var(--gr);
+  font-family: "Montenegrin Gothic One", monospace;
+  color:var(--gr);
   font-size: 30px;
   font-weight: bold;
   white-space: nowrap;
@@ -126,31 +123,53 @@ content: 'registrati';
   box-shadow: 0 2px 10px rgba(0,0,0,0.8);
   z-index: 1000;
 }
-
-
+a.nav-link{
+    color: var(--ly);
+    font-family: "Anton SC", sans-serif;
+    font-size: 20px;
+}
+.home-custom{
+    color: var(--ly);
+    font-family: "Anton SC", sans-serif;
+    font-size: 20px
+}
+a.nav-link:hover{
+    color: var(--gee);
+    font-family: "Anton SC", sans-serif;
+    font-size: 20px;
+}
+a.utente{
+    color: var(--ly);
+    font-family: "Anton SC", sans-serif;
+    font-size: 20px;
+}
 /* fine navbar  */
 
 /* welcome  */
 .welcome{
-    color: var(--bd);
-    font-family:"Inter", sans-serif;
-    background-image: linear-gradient(rgb(133, 108, 81), rgba(19, 21, 21,0.2)), url(/public/image/img4.jpg);
+    
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--vi);
     
 } 
+.wel-scritta{
+    color:var(--gr);;
+    font-family:"Montenegrin Gothic One", serif;
+}
 .welcome-btn{
+
   background-color: rgba(19,21,21,0.2);
-  color: rgb(244, 171, 53);
+  color: var(--gee);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+ 
 }
 /* fine welcome  */
 
@@ -159,7 +178,7 @@ content: 'registrati';
 /* scritta log  */
 .log{
   font-family: "Anton SC", sans-serif;  
-  color: white;
+  color: var(--yl);
   font-size: 50px;
 }
 .log::before{
@@ -171,7 +190,7 @@ content: 'registrati';
 
 .log-btn{
    background-color: rgba(19,21,21,0.2);
-  color: var(--bd);
+  color: var(--yl);
   padding: 10px 20px;
   border-top: #33131D;
   border-radius: 5px;
@@ -189,6 +208,25 @@ content: 'registrati';
 /* fine forum login */
 /* finepagina log  */
 
+/* index */
+.index-custom{
+    
+    color: var(--gee);
+    font-family: Anton SC, sans-serif;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    color: rgb(240, 246, 238);
+    font-family:monospace;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* fine index */
 
 
 /* footer  */
@@ -199,3 +237,64 @@ content: 'registrati';
 }
 
 
+
+.h-75{
+min-height: 75vh;
+}
+
+/* create articolo  */
+
+.text-wavy {
+      font-family:"Anton SC", sans-serif;
+      color: var(--yl);  
+     display: inline-block;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    .text-wavy:hover {
+      animation: wave 1s infinite;
+    }
+    @keyframes wave {
+      0%   { transform: translateY(0); }
+      25%  { transform: translateY(-5px); }
+      50%  { transform: translateY(0); }
+      75%  { transform: translateY(5px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* sezione card  */
+
+    /* bottone dettaglio  */
+    .dett-btn{
+        background-color: rgba(19,21,21,0.2);
+        color: var(--gee);
+        padding: 10px 20px;
+        border-top: #33131D;
+        border-radius: 5px;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        
+    }
+    /* fine bottone dettaglio  */
+
+    /* titolo card  */
+    .card-title{
+        color: rgb(171, 255, 78);
+        font-family: Anton SC, sans-serif;
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    }
+    /* fine titolo card  */
+     
+.card-shape{
+  height: 50%;
+  width: 30%;
+  margin: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1) ; 
+  border-radius: 12px;      
+  padding: 15px;            
+  background-color:  rgba(19,21,21,0.2); 
+  box-shadow: 0 4px 6px rgba(171, 255, 78, 0.5);
+
+
+    }

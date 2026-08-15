@@ -27,25 +27,28 @@ public function save()
         'description' => $this->description,
         'price' => $this->price,
         'category_id' => $this->category,
-        'uer_id' => Auth::id()
+        'user_id' => Auth::id()
     ]);
-}
-public function store()
-{
-   $this->cleanForm();
-   session()->flash('success', 'Articolo creato correttamente'); 
-}
-protected function cleanForm()
-{
-    $this->title= '';
-    $this->description = '';
-    $this->category = '';
-    $this->price = '';
- }
 
-
-    public function render()
+}
+public function render()
     {
         return view('livewire.create-article-form');
     }
+    
+public function store()
+{
+
+   $this->title= '';
+    $this->description = '';
+    $this->category = '';
+    $this->price = '';
+
+   session()->flash('success', 'Articolo creato correttamente'); 
+   $this->redirect('/article/index');
+}
+
+
+
+    
 }

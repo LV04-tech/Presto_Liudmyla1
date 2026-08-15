@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use Carbon\CarbonImmutable;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -26,9 +27,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if(Schema::hasTable('categories')) {
-            View::share('categories', Category::orderBy('name')->get());
-        }
+       if(schema::hasTable('categories')){
+            $categories = Category::all();
+            View::share('categories', $categories);
+       }
+        Paginator::useBootstrapFive();
     }
 
     /**

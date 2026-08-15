@@ -8,7 +8,7 @@
     {{-- google fonts  --}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Italiana&family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Montenegrin+Gothic+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 {{-- fine google fonts  --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Presto</title>
