@@ -33,6 +33,17 @@
   </section>
   <!-- Section: Social media -->
 
+  {{-- richiesta revisore  --}}
+   <div class="col-md-5 offset-md-1 mb-3 mx-auto py-3 text-center canI">
+    
+   <h5>Vuoi diventare un revisore?</h5>
+   <p>Cliccando il bottone sottostante farai richiesta al nostro admin</p>
+
+   <a href="{{ route('become.revisor')}}" class="canI-btn">DIVENTA REVISORE</a>
+   </div>
+  {{-- fine richiesta revisore  --}}
+
+
   <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start mt-5">

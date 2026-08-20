@@ -298,3 +298,35 @@ min-height: 75vh;
 
 
     }
+
+    /* bottone revisore */
+    a.rev-btn {
+        background-color: rgba(19,21,21,0.2);
+        color: red;
+        padding: 10px 20px;
+        border: 2px dashed red;
+        border-radius: 5px;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        
+    }
+
+    /* //scritta footer revisore// */
+    .canI{
+        color: var(--yl);
+
+    }
+
+    .canI-btn{
+        background-color: rgba(19,21,21,0.2);
+        color: var(--gee);
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: "Oswald", sans-serif;
+        padding: 10px 20px;
+        border: 2px dashed var(--gee);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+

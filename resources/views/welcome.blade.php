@@ -5,9 +5,25 @@
                 <h1 class="display-4 wel-scritta ">Welcome to Presto.it</h1>
                 <div class="my-3">
                     
-                    <a class="welcome-btn" href="{{ route ('create.article')}}">Publica un articolo</a>   
-                    
+                    <a class="welcome-btn" href="{{ route ('create.article')}}">Publica un articolo</a> 
+
                 </div>
+
+                {{-- snipped flash message   --}}
+                @if(session()->has('errorMessage'))
+                <div class="alert alert-danger text-center shadow rounded w-50 ">
+                    {{ session('errorMessage') }}
+                </div>
+                @endif
+                {{-- fine snipped flash message   --}}
+
+                 {{-- snipped flash message   --}}
+                @if(session()->has('message'))
+                <div class="alert alert-success text-center mx-auto shadow rounded w-50 ">
+                    {{ session('message') }}
+                </div>
+                @endif
+                {{-- fine snipped flash message   --}}
                 
                 <div class="row d-flex justify-content-center align-items-center py-5 ">
                     @forelse ($articles as $article)
@@ -23,7 +39,7 @@
                     @endforelse
                 </div>
             </div>
-            </div>
+        </div>
         
     </div>
 </x-layout>

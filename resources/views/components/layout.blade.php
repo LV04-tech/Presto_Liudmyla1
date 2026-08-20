@@ -10,6 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Montenegrin+Gothic+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 {{-- fine google fonts  --}}
+
+{{-- fontawesome  --}}
+<script src="https://kit.fontawesome.com/1f6080f182.js" crossorigin="anonymous"></script>
+  {{-- fine fonawesome --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Presto</title>
 </head>
