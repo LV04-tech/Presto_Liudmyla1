@@ -2,8 +2,8 @@
     <div class="container-fluid pt-5">
         <div class="row">
             <div class="col-3">
-                <div class="rounded shadow bg-body-secondary">
-                    <h1 class="display-5 text-center pb-2">
+                <div class="rounded ">
+                    <h1 class="scritta-rev text-center pb-2">
                         revisor dashboard
                     </h1>
                 </div>
@@ -54,12 +54,14 @@
         </div>
         </div>
         @else
-        <div class="row justify-content-center align-items-center text-center">
-            <div class="col-12 ">
-                <h1 class=" fst-italicdisplay-5">
+        <div class="row justify-content-center align-items-center text-center ">
+            <div class="col-12 py-5">
+                <h1 class="fst-italic display-5">
                     Non ci sono articoli da revisionare
                 </h1>
-                <a href="{{ route('homepage') }}" class="mt-5 btn btn-success">Torna alla homepage</a>
+                </div>
+                <div class="col-12 ">
+                <a href="{{ route('homepage') }}" class="py-2 my-3 dett-btn">Torna alla homepage</a>
             </div>
         </div>
         @endif

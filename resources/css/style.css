@@ -114,7 +114,7 @@ body{
   
   top: 0;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -301,15 +301,36 @@ min-height: 75vh;
 
     /* bottone revisore */
     a.rev-btn {
+        height: 50px;
+        width: 60px;
         background-color: rgba(19,21,21,0.2);
-        color: red;
+        color: var(--yl);
+        align-items: center;
+        text-align: center;
         padding: 10px 20px;
-        border: 2px dashed red;
+        border-bottom: 2px dashed red;
         border-radius: 5px;
-        font-size: 16px;
+        font-size: 9px;
         text-decoration: none;
         cursor: pointer;
         
+    }
+     /* index.php  */
+
+    .scritta-rev{
+       height: 120%;
+       width: 100%;
+       font-family: "Montenegrin Gothic One", serif;
+        background-color: rgba(19,21,21,0.2);
+        color: var(--yl);
+        align-items: center;
+        text-align: center;
+        padding: 10px 20px;
+        border-bottom: 2px dashed red;
+        border-radius: 5px;
+        font-size: 30px;
+        text-decoration: none;
+
     }
 
     /* //scritta footer revisore// */
@@ -330,3 +351,19 @@ min-height: 75vh;
         font-size: 16px;
     }
 
+    /* search  */
+
+    .form-control{
+        height: 80%;
+        width: 50%;
+       background-color: var(--yl);
+        
+    }
+
+    #basic-addon2{
+        height: 80%;
+        width: 45%;
+        background-color: rgba(19,21,21,0.2); ;
+        color: var(--gee);
+    }
+   /* fine search */
