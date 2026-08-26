@@ -32,7 +32,7 @@
         
         
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">Tutti gli articoli</a>
+            <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">{{__("ui.allArticles")}}</a>
         </li>
         
         
@@ -44,7 +44,7 @@
             </a>
             <ul class="dropdown-menu">
                 @foreach ($categories as $category)
-                <li><a class="dropdown-item text-capitalize" href=" {{ route('byCategory', ['category' => $category]) }}">{{ $category->name}}</a>
+                <li><a class="dropdown-item text-capitalize" href=" {{ route('byCategory', ['category' => $category]) }}"> {{__("ui.$category->name")}}</a>
                 </li>
                 @if (!$loop->last)
                 <hr class="dropdown-divider">
@@ -58,7 +58,7 @@
         
         <li class="nav-item dropdown utente">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Ciao, {{ Auth::user()->name}}
+                {{__("ui.hello")}}, {{ Auth::user()->name}}
             </a>
             
             <ul class="dropdown-menu">
@@ -81,6 +81,12 @@
         
         @endauth
     </div> 
+    {{-- lang  --}}
+    <x-_locale lang="it"/>
+    <x-_locale lang="uk"/>
+    <x-_locale lang="ua"/>
+
+    {{-- fine lang  --}}
     
     {{-- search  --}}
     <div class="container">
