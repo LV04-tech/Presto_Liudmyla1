@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center text-center">
             <div class="col-12 py-5">
-                <h1 class="index-custom">TUTTI GLI ARTICOLI</h1>
+                <h1 class="index-custom"> {{__("ui.allArticles")}}</h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-center py-5">
@@ -13,7 +13,7 @@
         @empty
                 <div class="col-12">
                     <h3 class="text-center text">
-                        Non sono ancora stati creati articoli
+                        {{__("ui.notArticles")}}
                     </h3>
                 </div> 
         @endforelse     

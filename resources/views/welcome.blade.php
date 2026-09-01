@@ -5,7 +5,7 @@
                 <h1 class="display-4 wel-scritta ">Welcome to Presto.it</h1>
                 <div class="my-3">
                     
-                    <a class="welcome-btn" href="{{ route ('create.article')}}">Publica un articolo</a> 
+                    <a class="welcome-btn" href="{{ route ('create.article')}}">{{__("ui.publishesAnArticle")}}</a> 
 
                 </div>
 
@@ -33,7 +33,7 @@
                     @empty
                     <div class="col-12">
                         <h3 class="text-center text-white">
-                            Non sono ancora stati creati articoli
+                           {{__("ui.notArticles")}}
                         </h3>
                     </div>
                     @endforelse

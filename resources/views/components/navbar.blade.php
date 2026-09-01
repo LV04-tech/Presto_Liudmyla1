@@ -11,14 +11,14 @@
         <div class=" col-12 col-md-6 collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link home-custom" aria-current="page" href="{{ route ('homepage') }}">Home</a>
+                    <a class="nav-link home-custom" aria-current="page" href="{{ route ('homepage') }}">{{__("ui.homepage")}}</a>
                 </li>
                 @auth 
                 
                 {{-- zona revisore --}}
                 @if(Auth::user()->is_revisor)
                 <li class="nav-item">
-                    <a class="nav-link rev-btn " href="{{ route('revisor.index') }}">Zona Revisore  
+                    <a class="nav-link rev-btn " href="{{ route('revisor.index') }}"> {{__("ui.auditorArea")}}
                         <span 
                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ \App\Models\Article::toBeRevisionedCount()}}
@@ -40,7 +40,7 @@
         {{-- categorie  --}}
         <li class="nav-item dropdown">
             <a  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorie
+               {{__("ui.categories")}}
             </a>
             <ul class="dropdown-menu">
                 @foreach ($categories as $category)
@@ -70,12 +70,12 @@
         @else
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle utente" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Ciao,utente!
+                {{__("ui.helloUser")}}
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href=" {{ route ('login')}}">Accedi</a></li>
+                <li><a class="dropdown-item" href=" {{ route ('login')}}">{{__("ui.login")}}</a></li>
                 <hr class="dropdown-divider">
-                <li><a class="dropdown-item" href="{{ route ('register') }}">Registrati</a></li>
+                <li><a class="dropdown-item" href="{{ route ('register') }}">{{__("ui.signUp")}}</a></li>
             </ul>      
         </div>
         
@@ -95,9 +95,9 @@
             <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
                 
                 <div class="input-group">
-                    <input type="cerca" name="query" class="form-control" placeholder="" aria-label="cerca">
+                    <input type="cerca" name="query" class="form-control" placeholder=" {{__("ui.search")}}" aria-label="cerca">
                     <button type="submit" class="input-group-text"  id="basic-addon2">
-                      Cerca
+                 <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
             </form>

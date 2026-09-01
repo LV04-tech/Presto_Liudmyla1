@@ -181,12 +181,7 @@ a.utente{
   color: var(--yl);
   font-size: 50px;
 }
-.log::before{
-    content: 'Accedi';
-    position: absolute;
-    mix-blend-mode: difference;
-    filter: blur(2px);
-}
+
 
 .log-btn{
    background-color: rgba(19,21,21,0.2);
@@ -355,14 +350,14 @@ min-height: 75vh;
 
     .form-control{
         height: 80%;
-        width: 50%;
+        width: 70%;
        background-color: var(--yl);
         
     }
 
     #basic-addon2{
         height: 80%;
-        width: 45%;
+        width: 40%;
         background-color: rgba(19,21,21,0.2); ;
         color: var(--gee);
     }

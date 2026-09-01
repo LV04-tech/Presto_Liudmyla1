@@ -3,7 +3,7 @@
         <div class="row justify-content-center ">
             <div class="col-12 text-center height-art  ">
                
-                  <span class="text-wavy display-5">  Pubblica un articolo</span>
+                  <span class="text-wavy display-5"> {{__("ui.publishesAnArticle")}}</span>
               
             </div>
         </div>
