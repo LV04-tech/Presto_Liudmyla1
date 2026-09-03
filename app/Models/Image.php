@@ -16,6 +16,6 @@ class Image extends Model
     ];
     public function article() : BelongsTo
     {
-        return $this->nelongsTo(Article::class);
+        return $this->belongsTo(Article::class);
     }
 }

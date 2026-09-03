@@ -25,6 +25,7 @@ public $article;
 public $images = [];
 public $temporary_images;
 
+
 public function save()
 {
 $this->validate();
@@ -77,7 +78,7 @@ public function updateTemporaryImages()
 {
     if($this->validate([
         'temporary_images.*' => 'image|max:1024',
-        'temporary_images' => 'max:6'
+        'temporary_images' => 'max:4'
     ])) {
         foreach ($this->temporary_images as $image) {
             $this->images[] = $image;
