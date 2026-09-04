@@ -17,6 +17,7 @@
         "livewire/blaze": "^1.0",
         "livewire/livewire": "*",
         "outhebox/blade-flags": "*",
+        "spatie/image": "*",
         "teamtnt/laravel-scout-tntsearch-driver": "*"
     },
     "require-dev": {

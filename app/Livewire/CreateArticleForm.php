@@ -56,7 +56,7 @@ public function store()
 ]);
 if(count($this->images) > 0) {
     foreach ($this->images as $image) {
-        $this->article->images()->create(['path' => $images->store('images', 'public')]);
+        $this->article->images()->create(['path' => $image->store('images', 'public')]);
 
     }
 }
@@ -74,11 +74,11 @@ protected function cleanForm()
     $this->images =[];
 }
 
-public function updateTemporaryImages()
+public function updatedTemporaryImages()
 {
     if($this->validate([
         'temporary_images.*' => 'image|max:1024',
-        'temporary_images' => 'max:4'
+        'temporary_images' => 'max:6'
     ])) {
         foreach ($this->temporary_images as $image) {
             $this->images[] = $image;

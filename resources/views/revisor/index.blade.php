@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-        @if ($article_to_check->images->count())
+        @if ( $article_to_check->images->count() )
              @foreach ($article_to_check->images as $key => $image)
                <div class="col-6 col-md-4 mb-4 text-center">
                   <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow" alt="Immagine {{$key +1}} dell'articolo {{ $article_to_check->title }}">
@@ -44,7 +44,7 @@
                     <button  class="btn btn-success py-2 px-5 fw-bold">{{__("ui.admit")}}</button>
                 </form>
             </div>
-        @else
+    
     <div class="row justify-content-center align-items-centertext-center ">
             <div class="col-12 py-5">
                 <h1 class="fst-italic display-5">
