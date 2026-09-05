@@ -56,7 +56,7 @@
             @endforeach  
         </div>
     </div>
- </div>
+    </div>
     @endif 
     {{-- fine inserimento immagine--}}
 

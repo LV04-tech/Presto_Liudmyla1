@@ -2,8 +2,10 @@
 
 namespace App\Livewire;
 
+use App\Jobs\ResizeImage;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -56,9 +58,12 @@ public function store()
 ]);
 if(count($this->images) > 0) {
     foreach ($this->images as $image) {
-        $this->article->images()->create(['path' => $image->store('images', 'public')]);
+        $newFileName = "articles/{$this->article->id}";
+        $newImage = $this->article->images()->create(['path' => $image->store($newFileName, 'public')]);
+        dispatch(new ResizeImage($newImage->path, 300, 300));
 
     }
+   
 }
 
 session()->flash('success', 'Articolo creato correttamente'); 
@@ -72,12 +77,13 @@ protected function cleanForm()
     $this->category = '';
     $this->price = '';
     $this->images =[];
+    $this->temporary_images = null;
 }
 
 public function updatedTemporaryImages()
 {
     if($this->validate([
-        'temporary_images.*' => 'image|max:1024',
+        'temporary_images.*' => 'image|mimes:png,jpg,jpeg,gif,webp,avif|max:1024',
         'temporary_images' => 'max:6'
     ])) {
         foreach ($this->temporary_images as $image) {
