@@ -35,7 +35,7 @@ class GoogleVisionLabelImage implements ShouldQueue
         if (!$i) {
             return;
         }
-        $image = file_get_contents(storage_path('app/public/' . $i->path));
+        $image = file_get_contents(storage_path("app/public/" . $i->path));
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
         $googleVisionClient = new ImageAnnotatorClient();
@@ -47,7 +47,8 @@ class GoogleVisionLabelImage implements ShouldQueue
         
         $request = new AnnotateImageRequest();
         $request->setImage($google_image);
-
+        $request->setFeatures([$googleFeature]);
+        
         $batchRequest = new BatchAnnotateImagesRequest();
         $batchRequest->setRequests([$request]);
 

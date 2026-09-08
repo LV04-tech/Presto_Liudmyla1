@@ -1,372 +1,408 @@
-*{
-   font-family: "Roboto Condensed", sans-serif;
-}
-:root{
+/* ==========================================
+   CONFIGURAZIONE GENERALE & VARIABILI
+   ========================================== */
+:root {
     --yl: rgb(204, 213, 174);
     --gr: rgb(109, 104, 117);
-    --gee:rgb(171, 255, 78);
-    --ly:   rgb(255, 250, 224);
+    --gee: rgb(171, 255, 78);
+    --ly: rgb(255, 250, 224);
     --dvi: rgb(214, 206, 147);
-    --bd:#33131D;
+    --bd: #33131D;
 }
 
-.bg-yl{
-    background-color: var(--yl); 
-}
-.bg-gr{
-    background-color: var(--gr);
-}
-.bg-gee{
-    background-color: var(--gee);
-}
-.bg-ly{
-    background-color: var(--ly);
-}
-.bg-dvi{
-    background-color: var(--dvi);
-}
-.bg-bd{
-    background-color: var(--bd);
-}
-text-yl{
-    color: var(--yl);
-}
-text-gr{
-    color: var(--gr);
-}
-text-gee{
-    color: var(--gee);
-}
-text-ly{
-    color: var(--ly);
-}
-text-dvi{
-    color: var(--dvi);
-}
-text-bd{
-    color: var(--bd);
-}
-
-
-body{
-    background-image: linear-gradient(rgb(152, 156, 153), rgba(19, 21, 21,0.2)), url(/public/image/img2.jpg);
-    background-position: center;
-}
-*{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: "Oswald", sans-serif;
+    transition: all 0.3s ease; /* Rende fluide tutte le animazioni di hover */
+}
+
+body {
+    background-image: linear-gradient(rgba(19, 21, 21, 0.4), rgba(19, 21, 21, 0.8)), url(/public/image/img2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: rgb(240, 246, 238);
+}
+
+/* Fix Classi di Testo (Aggiunto il punto mancante) */
+.text-yl { color: var(--yl); }
+.text-gr { color: var(--gr); }
+.text-gee { color: var(--gee); }
+.text-ly { color: var(--ly); }
+.text-dvi { color: var(--dvi); }
+.text-bd { color: var(--bd); }
+
+.bg-yl { background-color: var(--yl); }
+.bg-gr { background-color: var(--gr); }
+.bg-gee { background-color: var(--gee); }
+.bg-ly { background-color: var(--ly); }
+.bg-dvi { background-color: var(--dvi); }
+.bg-bd { background-color: var(--bd); }
+
+/* ==========================================
+   NAVBAR (Effetto Glassmorphism Ultra Moderno)
+   ========================================== */
+/* ==========================================
+   ICONA PERSONALIZZATA CON CERCHIO NEON
+   ========================================== */
+.icon-circle-custom {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     
-}
-
-/* scrittura registrati  */
-
-.height-regist{
- font-family: "Anton SC", sans-serif;  
-  color: var(--yl);
-  font-size: 50px; 
-}
-
-
-
-.height-custom{
- min-height: 60vh; 
-  color:rgb(240, 246, 238);
-  align-items: center;
-  padding: 1rem 5%;
-  background: rgba(19, 21, 21,0.2);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-  z-index: 1000;
-      
+    /* Dimensioni del cerchio */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     
+    /* Colori richiesti */
+    border: 2px solid var(--gee);       /* Contorno esterno verde neon */
+    background-color: rgba(19, 21, 21, 0.4); /* Sfondo scuro semi-trasparente per far risaltare il cerchio */
+    color: var(--ly);                  /* Colore dell'icona interna (crema) */
+    
+    font-size: 18px;                    /* Dimensione della casa */
+    box-shadow: 0 0 10px rgba(171, 255, 78, 0.2); /* Leggero bagliore neon */
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-
-/* navbar  scrittura. amachina*/
- a.navbar-brand{
-
-  font-family: "Montenegrin Gothic One", monospace;
-  color:var(--gr);
-  font-size: 30px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid rgba(19, 21, 21,0.2); /* Il cursore che lampeggia */
-  width: 0;
-  animation: 
-    digitazione 4s steps(40) forwards,
-    lampeggio 0.5s step-end forwards;
-}
-
-/* Animazione per far apparire le lettere */
-@keyframes digitazione {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-/* Animazione per il cursore lampeggiante */
-@keyframes lampeggio {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(19, 21, 21,0.2); }
+/* Effetto interattivo al passaggio del mouse (Hover) */
+.icon-circle-custom:hover {
+    background-color: var(--gee);      /* Il cerchio si riempie di verde neon */
+    color: var(--bd);                  /* L'icona interna prende il colore scuro del tuo brand */
+    box-shadow: 0 0 20px var(--gee);   /* Il bagliore neon diventa più intenso */
+    transform: scale(1.1);             /* Leggero zoom d'impatto */
 }
 
 
 
 .navbar-custom {
-  
-  top: 0;
-  width: 100%;
-  height: 30vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-  background: linear-gradient( rgb(133, 108, 81), rgba(19, 21, 21,0.2));
-  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-  z-index: 1000;
-}
-a.nav-link{
-    color: var(--ly);
-    font-family: "Anton SC", sans-serif;
-    font-size: 20px;
-}
-.home-custom{
-    color: var(--ly);
-    font-family: "Anton SC", sans-serif;
-    font-size: 20px
-}
-a.nav-link:hover{
-    color: var(--gee);
-    font-family: "Anton SC", sans-serif;
-    font-size: 20px;
-}
-a.utente{
-    color: var(--ly);
-    font-family: "Anton SC", sans-serif;
-    font-size: 20px;
-}
-/* fine navbar  */
-
-/* welcome  */
-.welcome{
-    
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--vi);
-    
-} 
-.wel-scritta{
-    color:var(--gr);;
-    font-family:"Montenegrin Gothic One", serif;
-}
-.welcome-btn{
-
-  background-color: rgba(19,21,21,0.2);
-  color: var(--gee);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
- 
-}
-/* fine welcome  */
-
-
-/* pagina login  */
-/* scritta log  */
-.log{
-  font-family: "Anton SC", sans-serif;  
-  color: var(--yl);
-  font-size: 50px;
-}
-
-
-.log-btn{
-   background-color: rgba(19,21,21,0.2);
-  color: var(--yl);
-  padding: 10px 20px;
-  border-top: #33131D;
-  border-radius: 5px;
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease; 
-}
-/* fine scritta log  */
-/* forum login */
-.form-log{
-    min-height: 60vh;
-    color: var(--gr);
-}
-/* fine forum login */
-/* finepagina log  */
-
-/* index */
-.index-custom{
-    
-    color: var(--gee);
-    font-family: Anton SC, sans-serif;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Rimane fissa in alto durante lo scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 5%;
+    background: rgba(19, 21, 21, 0.25); /* Trasparente */
+    backdrop-filter: blur(12px); /* Effetto vetro sfocato */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+a.navbar-brand {
+    font-family: "Montenegrin Gothic One", monospace;
+    color: var(--yl) !important; /* Spicca di più rispetto al grigio */
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+a.nav-link, a.utente, .home-custom {
+    color: var(--ly);
+    font-family: "Anton SC", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Linea animata sotto i link al passaggio del mouse */
+a.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--gee);
+    transition: width 0.3s ease;
+}
+
+a.nav-link:hover::after {
+    width: 100%;
+}
+
+a.nav-link:hover {
+    color: var(--gee) !important;
+}
+
+/* ==========================================
+   HERO / WELCOME SECTION (Schermo Intero)
+   ========================================== */
+.height-custom {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 5% 40px 5%; /* Padding superiore per non coprire i testi con la navbar */
+}
+
+.welcome {
+    background: transparent;
+    color: var(--ly);
+} 
+
+.wel-scritta {
+    color: var(--gee);
+    font-family: "Montenegrin Gothic One", serif;
+    font-size: 3.5rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+
+.text {
+    color: rgb(240, 246, 238);
+    font-family: monospace;
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   BOTTONI
+   ========================================== */
+.welcome-btn, .log-btn, .dett-btn {
+    background: rgba(171, 255, 78, 0.1);
+    color: var(--gee);
+    padding: 12px 28px;
+    border: 2px solid var(--gee);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(171, 255, 78, 0.2);
+}
+
+.welcome-btn:hover, .dett-btn:hover {
+    background: var(--gee);
+    color: var(--bd);
+    box-shadow: 0 4px 25px rgba(171, 255, 78, 0.5);
+    transform: translateY(-3px);
+}
+
+.log-btn {
+    border-color: var(--yl);
+    color: var(--yl);
+    background: rgba(204, 213, 174, 0.1);
+}
+
+.log-btn:hover {
+    background: var(--yl);
+    color: var(--bd);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   SEZIONE CARD (Effetto Neon Floating)
+   ========================================== */
+/* ==========================================
+   SEZIONE CARD (Aggiornata e Responsiva)
+   ========================================== */
+.card-shape {
+    width: 100%;               /* Prende il 100% della colonna di Bootstrap */
+    height: 100%;              /* Si adatta in altezza in base al contenuto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge il bottone dettaglio sempre in fondo */
+    
+    border-radius: 16px;      
+    padding: 25px;            
+    background: rgba(19, 21, 21, 0.4); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(171, 255, 78, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    margin-bottom: 24px;       /* Crea lo spazio verticale quando le card vanno a capo sui telefoni */
+}
+
+/* Effetto movimento quando passi sopra alla card */
+.card-shape:hover {
+    transform: translateY(-8px);
+    border-color: var(--gee);
+    box-shadow: 0 12px 30px rgba(171, 255, 78, 0.25);
+}
+
+.card-title {
+    color: var(--gee);
+    font-family: "Anton SC", sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   PAGINE LOGIN / REGISTRAZIONE & INDEX
+   ========================================== */
+.log, .height-regist {
+    font-family: "Anton SC", sans-serif;  
+    color: var(--yl);
+    font-size: 3.5rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.form-log {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.text{
-    color: rgb(240, 246, 238);
-    font-family:monospace;
-    text-decoration: underline;
-    font-size: 20px;
-    font-weight: bold;
+.index-custom {
+    color: var(--gee);
+    font-family: "Anton SC", sans-serif;
+    font-size: 3rem;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }
-/* fine index */
 
+/* ==========================================
+   ELEMENTI INTERFACCIA REVISORE / EXTRA
+   ========================================== */
+a.rev-btn {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+a.rev-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+.canI-btn {
+    background: transparent;
+    color: var(--gee);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px dashed var(--gee);
+    border-radius: 5px;
+}
+
+.canI-btn:hover {
+    background: rgba(171, 255, 78, 0.1);
+    transform: scale(1.05);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--yl);
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(171, 255, 78, 0.5);
+}
+
+.img-preview {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   FOOTER & STRUTTURA
+   ========================================== */
 
 /* footer  */
 .foot{
-     background: linear-gradient( rgb(133, 108, 81), rgba(19, 21, 21,0.2));
+     background: rgba(19, 21, 21, 0.25);
      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
      z-index: 1000; 
 }
-
-
-
-.h-75{
-min-height: 75vh;
+.tes{
+    color: var(--ly);
 }
 
-/* create articolo  */
+.h-75 { min-height: 75vh; }
 
+/* Animazione Testo Ondulato */
 .text-wavy {
-      font-family:"Anton SC", sans-serif;
-      color: var(--yl);  
-     display: inline-block;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-    .text-wavy:hover {
-      animation: wave 1s infinite;
-    }
-    @keyframes wave {
-      0%   { transform: translateY(0); }
-      25%  { transform: translateY(-5px); }
-      50%  { transform: translateY(0); }
-      75%  { transform: translateY(5px); }
-      100% { transform: translateY(0); }
-    }
+    font-family: "Anton SC", sans-serif;
+    color: var(--yl);  
+    display: inline-block;
+}
 
-    /* sezione card  */
+.text-wavy:hover {
+    animation: wave 0.8s infinite ease-in-out;
+}
 
-    /* bottone dettaglio  */
-    .dett-btn{
-        background-color: rgba(19,21,21,0.2);
-        color: var(--gee);
-        padding: 10px 20px;
-        border-top: #33131D;
-        border-radius: 5px;
-        font-size: 16px;
-        text-decoration: none;
-        cursor: pointer;
-        
-    }
-    /* fine bottone dettaglio  */
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
 
-    /* titolo card  */
-    .card-title{
-        color: rgb(171, 255, 78);
-        font-family: Anton SC, sans-serif;
-        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-    }
-    /* fine titolo card  */
-     
-.card-shape{
-  height: 50%;
-  width: 30%;
-  margin: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.1) ; 
-  border-radius: 12px;      
-  padding: 15px;            
-  background-color:  rgba(19,21,21,0.2); 
-  box-shadow: 0 4px 6px rgba(171, 255, 78, 0.5);
+/* 
+   PULSANTE TORNA SU (Back to Top)
+   */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(19, 21, 21, 0.6); /* Sfondo scuro trasparente */
+    backdrop-filter: blur(8px);       /* Effetto vetro sfocato coerente con la navbar */
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid var(--gee);       /* Bordo color neon */
+    color: var(--gee);                  /* Freccia color neon */
+    border-radius: 50%;                 /* Forma circolare */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;                      /* Sempre sopra a tutto */
+    box-shadow: 0 4px 15px rgba(171, 255, 78, 0.2);
+    
+    /* Gestione visibilità iniziale (nascosto) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 
-    }
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
-    /* bottone revisore */
-    a.rev-btn {
-        height: 50px;
-        width: 60px;
-        background-color: rgba(19,21,21,0.2);
-        color: var(--yl);
-        align-items: center;
-        text-align: center;
-        padding: 10px 20px;
-        border-bottom: 2px dashed red;
-        border-radius: 5px;
-        font-size: 9px;
-        text-decoration: none;
-        cursor: pointer;
-        
-    }
-     /* index.php  */
+/* Effetto al passaggio del mouse (Hover) */
+.back-to-top:hover {
+    background: var(--gee);
+    color: var(--bd);                   /* La freccia prende il colore scuro di sfondo */
+    box-shadow: 0 4px 25px rgba(171, 255, 78, 0.6);
+    transform: translateY(-5px);        /* Leggero salto verso l'alto */
+}
 
-    .scritta-rev{
-       height: 120%;
-       width: 100%;
-       font-family: "Montenegrin Gothic One", serif;
-        background-color: rgba(19,21,21,0.2);
-        color: var(--yl);
-        align-items: center;
-        text-align: center;
-        padding: 10px 20px;
-        border-bottom: 2px dashed red;
-        border-radius: 5px;
-        font-size: 30px;
-        text-decoration: none;
+/* Animazione interna della freccia quando si passa sopra */
+.back-to-top:hover svg {
+    animation: bounceUp 0.6s infinite alternate;
+}
 
-    }
+@keyframes bounceUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-4px); }
+}
 
-    /* //scritta footer revisore// */
-    .canI{
-        color: var(--yl);
-
-    }
-
-    .canI-btn{
-        background-color: rgba(19,21,21,0.2);
-        color: var(--gee);
-        text-decoration: none;
-        font-weight: bolder;
-        font-family: "Oswald", sans-serif;
-        padding: 10px 20px;
-        border: 2px dashed var(--gee);
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    /* search  */
-
-    .form-control{
-        height: 80%;
-        width: 70%;
-       background-color: var(--yl);
-        
-    }
-
-    #basic-addon2{
-        height: 80%;
-        width: 40%;
-        background-color: rgba(19,21,21,0.2); ;
-        color: var(--gee);
-    }
-   /* fine search */
-
-   .img-preview{
-    background-position: center;
-    background-repeat: no repeat;
-    background-size: cover;
-    height: 120px;
-    width: 120px;
-   }

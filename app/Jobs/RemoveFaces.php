@@ -42,14 +42,14 @@ class RemoveFaces implements ShouldQueue
 
         $src = storage_path('app/public/' . $i->path);
         $image = file_get_contents($src);
-        putenv('GOOGLE_APPLICATION_CREDENTIALS', base_path('google_credential.json'));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
         $googleVisionClient = new ImageAnnotatorClient();
         $google_image = new VisionImage([
             'content' => $image]);
         
         $googleFeature = new Feature();
-        $googleFeature->setType(Feature_Type::FACE_DETECTION);
+        $googleFeature->setType(Type::FACE_DETECTION);
 
         $request = new AnnotateImageRequest();
         $request->setImage($google_image);
@@ -68,14 +68,14 @@ class RemoveFaces implements ShouldQueue
             foreach ($vertices as $vertex) {
                 $bounds[] = [$vertex->getX(), $vertex->getY()];
                 }
-        $w = $boundes[2][0] - $bounds[0][0];
+        $w = $bounds[2][0] - $bounds[0][0];
         $h = $bounds[2][1] - $bounds[0][1];
         $image =SpatieImage::useImageDriver(ImageDriver::Gd)->load($src);
 
         $image->watermark(
             
             base_path('resources/img/face.png'),
-            AlignPosition::Topleft,
+            AlignPosition::TopLeft,
             paddingX: $bounds[0][0],
             paddingY: $bounds[0][1],
             width: $w,

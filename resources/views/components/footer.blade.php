@@ -3,13 +3,13 @@
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
+    <div class="me-5 d-none d-lg-block tes">
       <span>{{__("ui.getConnect")}}</span>
     </div>
     <!-- Left -->
 
     <!-- Right -->
-    <div>
+    <div class="tes">
       <a href="" class="me-4 text-reset">
         <i class="fab fa-facebook-f"></i>
       </a>
@@ -34,7 +34,7 @@
   <!-- Section: Social media -->
 
   {{-- richiesta revisore  --}}
-   <div class="col-md-5 offset-md-1 mb-3 mx-auto py-3 text-center canI">
+   <div class="col-md-5 offset-md-1 mb-3 mx-auto py-3 text-center canI tes">
     
    <h5>{{__("ui.revisor")}}</h5>
    <p>{{__("ui.request")}}</p>
@@ -45,7 +45,7 @@
 
 
   <!-- Section: Links  -->
-  <section class="">
+  <section class="tes">
     <div class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
@@ -83,7 +83,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 tes">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
            {{__("ui.usefulLinks")}}
@@ -104,7 +104,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 tes">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">{{__("ui.contact")}}</h6>
           <p><i class="fas fa-home me-3"></i> {{__("ui.address")}}</p>

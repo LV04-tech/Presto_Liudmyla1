@@ -2,16 +2,16 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
-use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Foundation\Queue\Queueable;
+use Spatie\Image\Enums\AlignPosition;
+use Spatie\Image\Enums\CropPosition;
+use Spatie\Image\Image;
+use Spatie\Image\Enums\ImageDriver;
 
 class ResizeImage implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Queueable;
 
     private $path;
     private $w;
@@ -34,23 +34,24 @@ class ResizeImage implements ShouldQueue
      */
     public function handle(): void
     {
-        // 1. Definiamo i percorsi assoluti per la libreria grafica
-        $srcPath = storage_path("app/public/{$this->path}/{$this->fileName}");
-        $destPath = storage_path("app/public/{$this->path}/crop_{$this->w}x{$this->h}_{$this->fileName}");
+        $w =$this->w;
+        $h =$this->h;
+        $srcPath=storage_path()."/app/public/".$this->path."/".$this->fileName;
+        $destPath=storage_path()."/app/public/".$this->path."/crop_{$w}x{$h}_".$this->fileName;
+        
+        Image::useImageDriver(ImageDriver::Gd)->load($srcPath)
+        ->crop($w,$h, CropPosition::Center)
+        ->brightness(-20)
+        ->watermark(
+            base_path("resources/img/watermark1.png"),
+            AlignPosition::BottomRight,
+            paddingX:8,
+            paddingY:8,
+            width:100,
+            height:100,
+            
 
-        // Sicurezza: Se il file originale non esiste (es. upload fallito o interrotto), ci fermiamo
-        if (!file_exists($srcPath)) {
-            return;
-        }
-
-        // 2. Configura Intervention Image per usare Imagick se disponibile (supporto AVIF ottimale)
-        if (extension_loaded('imagick')) {
-            Image::configure(['driver' => 'imagick']);
-        }
-
-        // 3. Eseguiamo il ritaglio e salviamo il nuovo file con il prefisso corretto
-        Image::make($srcPath)
-            ->fit($this->w, $this->h) // "fit" taglia e ridimensiona mantenendo le proporzioni
-            ->save($destPath);
+        )
+        ->save($destPath);
     }
 }
