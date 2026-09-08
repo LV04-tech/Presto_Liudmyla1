@@ -1,6 +1,6 @@
-/* ==========================================
+/* 
    CONFIGURAZIONE GENERALE & VARIABILI
-   ========================================== */
+   = */
 :root {
     --yl: rgb(204, 213, 174);
     --gr: rgb(109, 104, 117);
@@ -8,6 +8,10 @@
     --ly: rgb(255, 250, 224);
     --dvi: rgb(214, 206, 147);
     --bd: #33131D;
+    
+    --metallic-silver: rgb(220, 225, 230); 
+
+
 }
 
 * {
@@ -28,7 +32,7 @@ body {
     color: rgb(240, 246, 238);
 }
 
-/* Fix Classi di Testo (Aggiunto il punto mancante) */
+/* Classi di Utilità per i Testi ed i Background */
 .text-yl { color: var(--yl); }
 .text-gr { color: var(--gr); }
 .text-gee { color: var(--gee); }
@@ -43,45 +47,36 @@ body {
 .bg-dvi { background-color: var(--dvi); }
 .bg-bd { background-color: var(--bd); }
 
-/* ==========================================
-   NAVBAR (Effetto Glassmorphism Ultra Moderno)
-   ========================================== */
-/* ==========================================
+/* 
    ICONA PERSONALIZZATA CON CERCHIO NEON
-   ========================================== */
+    */
 .icon-circle-custom {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    
-    /* Dimensioni del cerchio */
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    
-    /* Colori richiesti */
-    border: 2px solid var(--gee);       /* Contorno esterno verde neon */
-    background-color: rgba(19, 21, 21, 0.4); /* Sfondo scuro semi-trasparente per far risaltare il cerchio */
-    color: var(--ly);                  /* Colore dell'icona interna (crema) */
-    
-    font-size: 18px;                    /* Dimensione della casa */
-    box-shadow: 0 0 10px rgba(171, 255, 78, 0.2); /* Leggero bagliore neon */
-    transition: all 0.3s ease;
+    border: 2px solid var(--gee);       
+    background-color: rgba(19, 21, 21, 0.4); 
+    color: var(--ly);                  
+    font-size: 18px;                    
+    box-shadow: 0 0 10px rgba(171, 255, 78, 0.2); 
     cursor: pointer;
 }
 
-/* Effetto interattivo al passaggio del mouse (Hover) */
 .icon-circle-custom:hover {
-    background-color: var(--gee);      /* Il cerchio si riempie di verde neon */
-    color: var(--bd);                  /* L'icona interna prende il colore scuro del tuo brand */
-    box-shadow: 0 0 20px var(--gee);   /* Il bagliore neon diventa più intenso */
-    transform: scale(1.1);             /* Leggero zoom d'impatto */
+    background-color: var(--gee);      
+    color: var(--bd);                  
+    box-shadow: 0 0 20px var(--gee);   
+    transform: scale(1.1);             
 }
 
-
-
+/* 
+   NAVBAR (
+   */
 .navbar-custom {
-    position: fixed; /* Rimane fissa in alto durante lo scroll */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -90,8 +85,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    background: rgba(19, 21, 21, 0.25); /* Trasparente */
-    backdrop-filter: blur(12px); /* Effetto vetro sfocato */
+    background: rgba(19, 21, 21, 0.25); 
+    backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1000;
@@ -99,7 +94,7 @@ body {
 
 a.navbar-brand {
     font-family: "Montenegrin Gothic One", monospace;
-    color: var(--yl) !important; /* Spicca di più rispetto al grigio */
+    color: var(--yl) !important; 
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
@@ -115,7 +110,6 @@ a.nav-link, a.utente, .home-custom {
     position: relative;
 }
 
-/* Linea animata sotto i link al passaggio del mouse */
 a.nav-link::after {
     content: '';
     position: absolute;
@@ -135,9 +129,9 @@ a.nav-link:hover {
     color: var(--gee) !important;
 }
 
-/* ==========================================
-   HERO / WELCOME SECTION (Schermo Intero)
-   ========================================== */
+/*+
+  WELCOME SECTION 
+    */
 .height-custom {
     min-height: 100vh; 
     display: flex;
@@ -145,7 +139,7 @@ a.nav-link:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 5% 40px 5%; /* Padding superiore per non coprire i testi con la navbar */
+    padding: 100px 5% 40px 5%; 
 }
 
 .welcome {
@@ -161,18 +155,10 @@ a.nav-link:hover {
     margin-bottom: 20px;
 }
 
-.text {
-    color: rgb(240, 246, 238);
-    font-family: monospace;
-    font-size: 1.2rem;
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
 
-/* ==========================================
+/* 
    BOTTONI
-   ========================================== */
+  */
 .welcome-btn, .log-btn, .dett-btn {
     background: rgba(171, 255, 78, 0.1);
     color: var(--gee);
@@ -205,19 +191,15 @@ a.nav-link:hover {
     transform: translateY(-3px);
 }
 
-/* ==========================================
-   SEZIONE CARD (Effetto Neon Floating)
-   ========================================== */
-/* ==========================================
-   SEZIONE CARD (Aggiornata e Responsiva)
-   ========================================== */
+/* 
+   SEZIONE CARD DEGLI ANNUNCI 
+    */
 .card-shape {
-    width: 100%;               /* Prende il 100% della colonna di Bootstrap */
-    height: 100%;              /* Si adatta in altezza in base al contenuto */
+    width: 100%;               
+    height: 100%;              
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Spinge il bottone dettaglio sempre in fondo */
-    
+    justify-content: space-between; 
     border-radius: 16px;      
     padding: 25px;            
     background: rgba(19, 21, 21, 0.4); 
@@ -225,11 +207,9 @@ a.nav-link:hover {
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(171, 255, 78, 0.15);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    
-    margin-bottom: 24px;       /* Crea lo spazio verticale quando le card vanno a capo sui telefoni */
+    margin-bottom: 24px;       
 }
 
-/* Effetto movimento quando passi sopra alla card */
 .card-shape:hover {
     transform: translateY(-8px);
     border-color: var(--gee);
@@ -243,10 +223,9 @@ a.nav-link:hover {
     margin-bottom: 15px;
 }
 
-
-/* ==========================================
-   PAGINE LOGIN / REGISTRAZIONE & INDEX
-   ========================================== */
+/* 
+   PAGINE LOGIN / REGISTRAZIONE & TIPI DI SCRITTE
+  */
 .log, .height-regist {
     font-family: "Anton SC", sans-serif;  
     color: var(--yl);
@@ -260,6 +239,7 @@ a.nav-link:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: var(--yl);
 }
 
 .index-custom {
@@ -269,9 +249,69 @@ a.nav-link:hover {
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* ==========================================
+/* 
+   STRUTTURA SCATOLA FORM & CAMPI DI TESTO 
+  */
+.form-card-custom {
+    background: rgba(19, 21, 21, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(171, 255, 78, 0.15);
+    border-radius: 16px;
+    padding: 35px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.form-control, .form-select {
+    width: 100% !important;        
+    height: auto !important;         
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(204, 213, 174, 0.3) !important;
+    color: var(--ly) !important;
+    border-radius: 8px !important;
+    padding: 12px 15px !important;
+    font-family: sans-serif !important;
+    font-size: 16px !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-color: var(--gee) !important;
+    box-shadow: 0 0 12px rgba(171, 255, 78, 0.3) !important;
+    outline: none !important;
+}
+
+/* Ottimizzazione per la casella Descrizione larga */
+textarea.form-control {
+    min-height: 140px !important;    
+    height: auto !important;
+    resize: vertical;               
+}
+
+/* Risolve i contrasti grafici sui caricamenti file */
+input[type="file"].form-control {
+    padding: 8px 12px !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.form-label-custom {
+    color: var(--yl);
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+    text-align: center; 
+}
+
+/* 
    ELEMENTI INTERFACCIA REVISORE / EXTRA
-   ========================================== */
+  */
 a.rev-btn {
     background: rgba(255, 0, 0, 0.1);
     color: #ff4d4d;
@@ -302,41 +342,50 @@ a.rev-btn:hover {
     transform: scale(1.05);
 }
 
-.form-control {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--yl);
-    border-radius: 4px;
-    padding: 8px 12px;
-}
-
-.form-control:focus {
-    background-color: #fff;
-    outline: none;
-    box-shadow: 0 0 10px rgba(171, 255, 78, 0.5);
-}
-
 .img-preview {
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: block !important;
+    width: 120px !important;
+    min-width: 120px !important;
+    height: 120px !important;
+    min-height: 120px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4) !important;
+    border: 1px solid rgba(171, 255, 78, 0.3) !important; /* Un piccolo bordo neon per coerenza */
 }
 
-/* ==========================================
-   FOOTER & STRUTTURA
-   ========================================== */
-
-/* footer  */
-.foot{
-     background: rgba(19, 21, 21, 0.25);
-     box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-     z-index: 1000; 
+.scritta-rev{
+    color:rgba(171, 255, 78, 0.3);
 }
+
+.mes-nothing{
+    color: var(--dvi);
+}
+/* 
+   FOOTER & ANIMAZIONI
+  */
+.foot {
+    background: rgba(19, 21, 21, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px 0;
+}
+
 .tes{
-    color: var(--ly);
+    color: var(--yl);
 }
+#categor{
+    color: var(--gee);
+}
+.underW{
+    color: var(--metallic-silver);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Un leggero riflesso di luce */
+}
+
 
 .h-75 { min-height: 75vh; }
 
-/* Animazione Testo Ondulato */
 .text-wavy {
     font-family: "Anton SC", sans-serif;
     color: var(--yl);  
@@ -354,55 +403,26 @@ a.rev-btn:hover {
 
 /* 
    PULSANTE TORNA SU (Back to Top)
-   */
+ */
 .back-to-top {
+   
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 50px;
     height: 50px;
-    background: rgba(19, 21, 21, 0.6); /* Sfondo scuro trasparente */
-    backdrop-filter: blur(8px);       /* Effetto vetro sfocato coerente con la navbar */
+    background: rgba(19, 21, 21, 0.6); 
+    backdrop-filter: blur(8px);       
     -webkit-backdrop-filter: blur(8px);
-    border: 2px solid var(--gee);       /* Bordo color neon */
-    color: var(--gee);                  /* Freccia color neon */
-    border-radius: 50%;                 /* Forma circolare */
+    border: 2px solid var(--gee);       
+    color: var(--gee);                  
+    border-radius: 50%;                 
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 9999;                      /* Sempre sopra a tutto */
+    z-index: 9999;                      
     box-shadow: 0 4px 15px rgba(171, 255, 78, 0.2);
-    
-    /* Gestione visibilità iniziale (nascosto) */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Effetto al passaggio del mouse (Hover) */
-.back-to-top:hover {
-    background: var(--gee);
-    color: var(--bd);                   /* La freccia prende il colore scuro di sfondo */
-    box-shadow: 0 4px 25px rgba(171, 255, 78, 0.6);
-    transform: translateY(-5px);        /* Leggero salto verso l'alto */
-}
-
-/* Animazione interna della freccia quando si passa sopra */
-.back-to-top:hover svg {
-    animation: bounceUp 0.6s infinite alternate;
-}
-
-@keyframes bounceUp {
-    from { transform: translateY(0); }
-    to { transform: translateY(-4px); }
-}
-

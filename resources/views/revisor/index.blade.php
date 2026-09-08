@@ -94,11 +94,11 @@
         @endfor
         @endif
         {{-- Dettagli dell'articolo --}}
-        <div class="col-md-8 ps-4 d-flex flex-column justify-content-between">
+        <div class="col-md-8 ps-4 d-flex flex-column justify-content-center text-center tes">
             <h1> {{ $article_to_check->title }}</h1>
             <h3>Autore: {{ $article_to_check->user->name }}</h3>
             <h4>{{ $article_to_check->price }} €</h4>
-            <h4 class="fst-italic text-muted">#{{$article_to_check->category->name }}</h4>
+            <h4 class="fst-italic" id="categor">#{{$article_to_check->category->name }}</h4>
             <p class="h6">{{ $article_to_check->description }}</p>
         </div>
         
@@ -118,13 +118,13 @@
         {{-- fine Pulsanti di approvazione/rifiuto --}}
         @else
         {{-- BLOCCO B: La coda è vuota --}}
-        <div class="row justify-content-center align-items-centertext-center ">
+        <div class="row justify-content-center align-items-centertext-center mes-nothing">
             <div class="col-12 py-5 align-items-center text-center">
                 <h1 class="fst-italic display-5">
                     {{__("ui.nothingToCheck")}}
                 </h1>
-                <p class="text-muted"> La coda di revisione è vuota</p>
-                <a href="{{ route('homepage') }}" class="py-2 my-3 dett-btn"> {{__("ui.backHome")}}</a>
+                <p class="text-white align-items-center text-center"> La coda di revisione è vuota</p>
+                <a href="{{ route('homepage') }}" class="py-2 my-3 dett-btn mes-nothing"> {{__("ui.backHome")}}</a>
             </div>
         </div>
         

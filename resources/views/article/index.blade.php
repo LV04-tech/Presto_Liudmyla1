@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container-fluid">
-        <div class="row justify-content-center align-items-center text-center">
+        <div class="row justify-content-center align-items-center text-center tes">
             <div class="col-12 py-5">
                 <h1 class="index-custom"> {{__("ui.allArticles")}}</h1>
             </div>
@@ -12,7 +12,7 @@
             </div>
         @empty
                 <div class="col-12">
-                    <h3 class="text-center text">
+                    <h3 class="text-center tes">
                         {{__("ui.notArticles")}}
                     </h3>
                 </div> 

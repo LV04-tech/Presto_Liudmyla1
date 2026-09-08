@@ -5,7 +5,7 @@
                 <h1 class="display-4">{{__("ui.articleDetails")}} :{{ $article->title }}</h1>
             </div>
         </div>
-        <div class="row justify-content-center py-5">
+        <div class="row justify-content-center py-5 underW">
             <div class="col-12 col-md-6 mb-3">
                 @if ($article->images->count() > 0)
                 {{-- inizio carosello  --}}
